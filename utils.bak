@@ -1,0 +1,9 @@
+;; utils.scm
+(define (timed-run f arg)
+  (let ((start (current-inexact-milliseconds))
+        (result (f arg)))
+    (let ((end (current-inexact-milliseconds)))
+      (display "耗时: ")
+      (display (- end start))
+      (display " 毫秒\n")
+      result)))
